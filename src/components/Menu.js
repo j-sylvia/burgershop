@@ -8,7 +8,6 @@ import React from 'react';
 import Image from 'react-bootstrap/Image';
 import Ratings from './Ratings';
 
-
 const baseURL = "https://j-sylvia.github.io/api/db.json";
 
 function Menu() {
@@ -60,8 +59,9 @@ function Menu() {
                   
                 </Card.Text>
                 <Button style={{ marginBottom: '10px' }} variant="success">Add to cart</Button><br />
-                {/* <i>{item.orders}</i> */}
+                
               </Card.Body>
+              <small style={{color:'#807c7a'}}>{item.orders}</small>
             </Card>
           </Col>
         ))}
