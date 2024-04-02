@@ -87,7 +87,7 @@ function Home() {
       </Carousel.Caption>
     </Carousel.Item>
   </Carousel>
-
+<div className='container'>
   <Tabs
       defaultActiveKey={activeKey}
       id="justify-tab-example"
@@ -112,7 +112,7 @@ function Home() {
         {renderTabContent('desserts')}
       </Tab>
     </Tabs>
-
+        </div>
   </>
 
   );
