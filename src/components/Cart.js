@@ -2,8 +2,9 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import React from 'react';
+// import {addToCart} from './Menu'
 
-function OffCanvasExample({ name, ...props }) {
+function OffCanvasExample({ cart, addToCart, ...props }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -19,8 +20,13 @@ function OffCanvasExample({ name, ...props }) {
           <Offcanvas.Title>Offcanvas</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
+        {cart && cart.map(product => (
+            <div key={product.id}>
+              <h4>{product.name}</h4>
+              <p>{product.rname}</p>
+              {/* <Button onClick={() => addToCart(product)}>Add to cart</Button> */}
+            </div>
+          ))}
         </Offcanvas.Body>
       </Offcanvas>
     </>
