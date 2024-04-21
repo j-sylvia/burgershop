@@ -1,13 +1,18 @@
 import Carousel from 'react-bootstrap/Carousel';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import carousal1 from '../images/carousal-1.png';
-import carousal2 from '../images/carousal-2.jpg';
+// import carousal1 from '../images/carousal-3.jpg';
+// import carousal2 from '../images/carousal-1.png';
+import carousal3 from '../images/carousal-3.jpg';
+import carousal4 from '../images/carousal-4.jpg';
+import carousal5 from '../images/carousal-5.jpg';
 import {useState,useEffect} from 'react';
 import axios from 'axios';
 import { Rating } from '@mui/material';
 import { Row } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import '../App.css'
 
 const baseURL = "https://j-sylvia.github.io/api/db.json";
 
@@ -32,9 +37,9 @@ function Home() {
           <Card style={{padding:'15px'}}>
             <Card.Img variant="top" src={item.imgdata} />
             <Card.Body>
-              <Card.Title>{item.name}</Card.Title>
+              <Card.Title>{item.name} - <b>₹.{item.price}</b></Card.Title>
               <Card.Text>
-                <Rating value={item.rating} />
+                <Rating value={Number(item.rating)} />
               </Card.Text>
             </Card.Body>
           </Card>
@@ -45,74 +50,75 @@ function Home() {
 
   return(
     <>
-    <Carousel data-bs-theme="dark" style={{marginBottom:'50px'}}>
+    <Carousel data-bs-theme="dark" style={{marginBottom:'60px'}}>
     <Carousel.Item>
       <img
         className="d-block w-100"
-        src={carousal2}
+        src={carousal3}
         alt="First slide"
         height='600px'
-
       />
-      <Carousel.Caption>
+      {/* <Carousel.Caption>
         <h5>First slide label</h5>
         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-      </Carousel.Caption>
+      </Carousel.Caption> */}
     </Carousel.Item>
     <Carousel.Item>
       <img
         className="d-block w-100"
-        src={carousal1}
+        src={carousal4}
         alt="Second slide"
         height='600px'
       />
-      <Carousel.Caption>
+      {/* <Carousel.Caption>
         <h5>Second slide label</h5>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </Carousel.Caption>
+      </Carousel.Caption> */}
     </Carousel.Item>
     <Carousel.Item>
       <img
         className="d-block w-100"
-        src={carousal2}
+        src={carousal5}
         alt="Third slide"
         height='600px'
 
       />
-      <Carousel.Caption>
+      {/* <Carousel.Caption>
         <h5>Third slide label</h5>
         <p>
           Praesent commodo cursus magna, vel scelerisque nisl consectetur.
         </p>
-      </Carousel.Caption>
+      </Carousel.Caption> */}
     </Carousel.Item>
   </Carousel>
-<div className='container'>
+<div className='container tab-container'>
   <Tabs
       defaultActiveKey={activeKey}
       id="justify-tab-example"
       className="mb-3"
-      style={{ fontSize: 'larger', fontWeight: 'bolder' }}
-      justify
-      onSelect={(k) => setActiveKey(k)}
+      style={{ fontSize: 'larger', fontWeight: 'bolder',fontFamily:'verdana',border:'none'}}
+      justify 
+      onSelect={(k) => setActiveKey(k)} 
     >
-      <Tab eventKey="Burgers" title="Burgers">
+    <Tab style={{backgroundColor:'#58c4c4',paddingBottom:'24px',borderRadius:'0 0 10px 10px'}} eventKey="Burgers" title="Burgers" tabClassName="coloredTab">
         {renderTabContent('burgers')}
       </Tab>
-      <Tab eventKey="Pizzas" title="Pizzas">
+      <Tab style={{backgroundColor:'#58c4c4',borderRadius:'0 0 10px 10px',paddingBottom:'24px'}} eventKey="Pizzas" title="Pizzas" tabClassName='coloredTab'>
         {renderTabContent('pizzas')}
       </Tab>
-      <Tab eventKey="Salads" title="Salads">
+      <Tab style={{backgroundColor:'#58c4c4',borderRadius:'0 0 10px 10px',paddingBottom:'24px'}} eventKey="Salads" title="Salads" tabClassName="coloredTab">
         {renderTabContent('salads')}
       </Tab>
-      <Tab eventKey="Sides" title="Sides">
+      <Tab style={{backgroundColor:'#58c4c4',borderRadius:'0 0 10px 10px',paddingBottom:'24px'}} eventKey="Sides" title="Sides" tabClassName="coloredTab">
         {renderTabContent('sides')}
       </Tab>
-      <Tab eventKey="Desserts" title="Desserts">
+      <Tab style={{backgroundColor:'#58c4c4',borderRadius:'0 0 10px 10px',paddingBottom:'24px'}} eventKey="Desserts" title="Desserts" tabClassName="coloredTab">
         {renderTabContent('desserts')}
       </Tab>
     </Tabs>
-        </div>
+    <Button size="lg" style={{marginTop:'40px',border:'2px solid #58c4c4',backgroundColor:'#58c4c4'}} href='/our-menu'>CLICK HERE TO ORDER</Button>
+</div>
+
   </>
 
   );
