@@ -7,6 +7,8 @@ import Aboutus from './components/Aboutus';
 import Layout from './components/Layout';
 import Home from "./components/Home";
 import Cart from "./components/Cart";
+import OffCanvasExample from "./components/Cart";
+// import OffCanvasExample from './Cart';
 
 function App() {
   
@@ -20,7 +22,7 @@ function App() {
         <Route index element={<Home />}></Route>
         <Route path="/about" element={<Aboutus />}></Route>
         <Route path="/our-menu" element={<Menu/>}></Route>
-        <Route path="/cart" element={<Cart />}></Route>
+        <Route element={<OffCanvasExample/>}></Route>
       </Route>
 
     </Routes>
@@ -28,16 +30,16 @@ function App() {
     </BrowserRouter>
    
    
-<div class="mt-5">
+<div className="mt-5">
 
-    <footer class="text-white text-center text-lg-start bg-success">
+    <footer className="text-white text-center text-lg-start" style={{backgroundColor:'#40a8a8'}}>
     {/* <!-- Grid container --> */}
-    <div class="container p-4">
+    <div className="container p-4">
       {/* <!--Grid row--> */}
-      <div class="row mt-4">
+      <div className="row mt-4">
         {/* <!--Grid column--> */}
-        <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
-          <h5 class="text-uppercase mb-4">About company</h5>
+        <div className="col-lg-4 col-md-12 mb-4 mb-md-0">
+          <h5 className="text-uppercase mb-4">About company</h5>
   
           <p>
             At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
@@ -49,62 +51,62 @@ function App() {
             molestias.
           </p>
   
-          <div class="mt-4">
+          <div className="mt-4">
             
-            <i class="fab fa-facebook-f"></i>
+            <i className="fab fa-facebook-f"></i>
             
-            <i class="fab fa-dribbble"></i>
+            <i className="fab fa-linkedin"></i>
             
-            <i class="fab fa-twitter"></i>
+            <i className="fab fa-twitter"></i>
             
-            <i class="fab fa-google-plus-g"></i>
+            <i className="fab fa-instagram"></i>
            
           </div>
         </div>
         {/* <!--Grid column--> */}
   
         {/* <!--Grid column--> */}
-        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase mb-4 pb-1">Our Location</h5>
+        <div className="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h5 className="text-uppercase mb-4 pb-1">Our Location</h5>
   
           {/* <div class="form-outline form-white mb-4">
             <input type="text" id="formControlLg" class="form-control form-control-lg" />
             <label class="form-label" for="formControlLg">Search</label>
           </div> */}
   
-          <ul class="fa-ul">
-            <li class="mb-3">
-              <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">New York, NY 10012, US</span>
+          <ul className="fa-ul">
+            <li className="mb-3">
+              <span className="fa-li"><i className="fas fa-home"></i></span> <span className="ms-2">New York, NY 10012, US</span>
             </li>
-            <li class="mb-3">
-              <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">info@example.com</span>
+            <li className="mb-3">
+              <span className="fa-li"><i className="fas fa-envelope"></i></span><span className="ms-2">info@example.com</span>
             </li>
-            <li class="mb-3">
-              <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+ 01 234 567 88</span>
+            <li className="mb-3">
+              <span className="fa-li"><i className="fas fa-phone"></i></span><span className="ms-2">+ 01 234 567 88</span>
             </li>
-            <li class="mb-3">
-              <span class="fa-li"><i class="fas fa-print"></i></span><span class="ms-2">+ 01 234 567 89</span>
+            <li className="mb-3">
+              <span className="fa-li"><i className="fas fa-print"></i></span><span className="ms-2">+ 01 234 567 89</span>
             </li>
           </ul>
         </div>
         {/* <!--Grid column--> */}
   
         {/* <!--Grid column--> */}
-        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase mb-4">Opening hours</h5>
+        <div className="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h5 className="text-uppercase mb-4">Opening hours</h5>
   
           <table>
-            <tbody class="font-weight-normal">
-              <tr><i class="fas fa-clock"></i>
-                <td> Mon - Thu:</td>
+            <tbody className="font-weight-normal">
+            <tr> 
+                <td><i className="fas fa-clock"></i> Mon - Thu:</td>
                 <td> 8am - 9pm</td>
               </tr>
-              <tr><i class="fas fa-clock"></i>
-                <td> Fri - Sat:</td>
+              <tr>
+                <td><i className="fas fa-clock"></i> Fri - Sat:</td>
                 <td> 8am - 1am</td>
               </tr>
-              <tr><i class="fas fa-clock"></i>
-                <td> Sunday:</td>
+              <tr>
+                <td><i className="fas fa-clock"></i> Sunday:</td>
                 <td> 9am - 10pm</td>
               </tr>
             </tbody>
@@ -117,9 +119,9 @@ function App() {
     {/* <!-- Grid container --> */}
   
     {/* <!-- Copyright --> */}
-    <div class="text-center p-3">
-      © 2021 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    <div className="text-center p-3">
+       &copy; 2024. Copyright:
+      <a className="text-white" href="http://localhost:3000/">Burgershop.com</a>
     </div>
     {/* <!-- Copyright --> */}
   </footer>
