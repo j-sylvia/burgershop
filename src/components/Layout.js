@@ -6,10 +6,10 @@ import Logoburger from '../images/burger-logo.png'
 // import Offcanvas from 'react-bootstrap/Offcanvas';
 import OffCanvasExample from "./Cart";
 
- function Layout(){
+ function Layout({ cart, addToCart, ...props }){
     return(
         <>
-        <Navbar bg="success"  data-bs-theme="dark" style={{fontSize:'1.3rem',fontWeight:'bold',height:'65px',fontFamily:'sans-serif'}}>
+        <Navbar data-bs-theme="dark" style={{position:'sticky',backgroundColor:'#40a8a8',fontSize:'1.3rem',fontWeight:'bold',height:'65px',fontFamily:'verdana'}} fixed="top">
         <Container>
           <Navbar.Brand as={Link} to="/">
             <img 
@@ -28,9 +28,9 @@ import OffCanvasExample from "./Cart";
            
             <Nav.Link as={Link} style={{marginRight:'30px'}} to="/our-menu">OUR MENU</Nav.Link>
 
-            <Nav.Link as={Link} ><div>{['end'].map((placement, idx) => (
-        <OffCanvasExample key={idx} placement={placement} name={placement} />
-      ))}</div></Nav.Link>
+            {/* <Nav.Link as={Link}>
+              <OffCanvasExample />
+      </Nav.Link> */}
           </Nav>
           </div>
         </Container>
