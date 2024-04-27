@@ -18,7 +18,7 @@ function Menu() {
   const [item, setItem] = useState(null);
   const [filteritem, setFilter] = useState([]);
   const [cart, setCart] = useState([]);
-  
+
   useEffect(() => {
     axios.get(baseURL)
       .then(res => {
@@ -50,19 +50,26 @@ const addToCart = (product) => {
     alert("Item added to cart");
   }
 
+  const removeFromCart = (productId) => {
+    setCart((prevCart) => prevCart.filter((product) => product.id !== productId));
+  };
+
+
   if (!item) return null;
 
   return (
     <>
+    
     <div style={{ position: 'relative', textAlign: 'center', color: 'white' }}>
       <Image
         src={Menuimg}
         style={{marginBottom: '30px',height: '360px',width: '100%',opacity: '0.6'}} fluid />
       <h1 style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',fontFamily:'sans-serif',fontWeight:'bold',fontSize:'3.2rem' }}>
-        OUR MENU
+        OUR MENU <br />
+
       </h1>
     </div>
-  
+    <OffCanvasExample cart={cart} addToCart={addToCart} removeFromCart={removeFromCart}/>
     <div className='container'>
       <Row xs={1} sm={2} md={3} lg={4} className="g-4">
         <input type="text" className='form-control' name='name' placeholder='Search here...' onChange={Filter} />
@@ -94,7 +101,7 @@ const addToCart = (product) => {
         ))}
 
       </Row>
-      <OffCanvasExample cart={cart} addToCart={addToCart} />
+      
     
     </div>
     </>
